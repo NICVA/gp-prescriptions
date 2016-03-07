@@ -2,9 +2,9 @@ library(jsonlite)
 library(plyr)
 
 
-range <- 1:6 ## x months to work with. Can change start and end of range. 
+range <- 1:6 ## Last 6 months. You can change start and end of range. 
              ## 1 = most recent month on https://www.opendatani.gov.uk/dataset/gp-prescribing-data
-             ## So be aware you're working backwards
+             ## So be aware that you're working 'backwards'
 
 if(dir.exists('~/GP Prescribing Data') != TRUE){
   dir.create('~/GP Prescribing Data')
@@ -60,4 +60,4 @@ detach(combined)
 
 ## Write the combined file to disk
 write.csv(combined, row.names=FALSE, paste("combined-prescribing-dataset-",Sys.Date(),".csv",sep=""))
-print(paste("Created file for range between",min(filenames),"and",max(filenames)))
+print(paste("Created file for range between",resources$name[max(range)],"and",resources$name[min(range)]))
