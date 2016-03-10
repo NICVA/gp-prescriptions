@@ -10,7 +10,9 @@ library(httr)
 
 url <- 'http://mapit.mysociety.org/postcode/'
 
-postcode_details <- data.frame(practice = practices$PracNo[unique(practices$PracNo)], pcd1 = practices$Postcode[unique(practices$PracNo)])
+postcode_details <- data.frame(practice = unique(practices$PracNo), pcd1 = NA)
+
+postcode_details$pcd1 = practices$Postcode[match(postcode_details$practice,practices$PracNo)]
 
 postcode_details <- within(postcode_details, pcd2 <- gsub(" ","",pcd1))
 
@@ -22,7 +24,7 @@ for (i in addcols){
 }
 
 for (r in 1:nrow(postcode_details)){
-  Sys.sleep(1)
+  Sys.sleep(0.4)
   p <- postcode_details[r,]$pcd2
   response <- GET(paste0(url,p))
   content <- content(response)
