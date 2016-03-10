@@ -21,7 +21,7 @@ for (i in addcols){
   postcode_details[,i] <- NA
 }
 
-for (r in 1:length(postcode_details){
+for (r in 1:length(postcode_details)){
   Sys.sleep(1)
   p <- postcode_details[r,]$pcd2
   response <- GET(paste0(url,p))
