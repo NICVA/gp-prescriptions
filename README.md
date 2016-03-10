@@ -10,3 +10,6 @@ Using the quarterly [GP Practice Reference Files](http://www.hscbusiness.hscni.n
 Providing that you apply the relevant Practice Reference Files correctly, the number of patients in the relevant *quarter* will be applied, even where a number of quarters are present in your dataset.
 
 This is beneficial because it allows prescribing rates (e.g. number of prescriptions per 1000 patients) to be calculated, adjusting for variations in the `total.quantity`.
+
+## Mapping practices
+(`map-practices.R`)[map-practices.R] takes your GP Practice Reference File (object `practices`) and adds ONS/NISRA names and codes for the constituency, ward, NI council and Census super output area for each practice, as well as latitudes and longitudes. 
