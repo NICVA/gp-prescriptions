@@ -1,6 +1,6 @@
 ## Taking input from a Practices Reference File (environment object: 'practices') this script
-## adds names and codes for constituencies, NI councils, wards and NISRA super output areas, as
-## well as latitudes and longitudes for each practice.
+## finds names and codes for constituencies, NI councils, wards and NISRA super output areas, as
+## well as latitudes and longitudes for each practice, in the new object 'postcode_details'
 
 ## Powered by the MapIt API from MySociety. 
 ## See http://mapit.mysociety.org/ for licensing terms for the use of this service,
@@ -21,7 +21,7 @@ for (i in addcols){
   postcode_details[,i] <- NA
 }
 
-for (r in 1:10){
+for (r in 1:length(postcode_details){
   Sys.sleep(1)
   p <- postcode_details[r,]$pcd2
   response <- GET(paste0(url,p))
