@@ -6,6 +6,10 @@
 ## See http://mapit.mysociety.org/ for licensing terms for the use of this service,
 ## and for the licensing of postcode data.
 
+## If you are looking only for coordinates, you may find it easier to use the NISRA source:
+## http://www.ninis2.nisra.gov.uk/Download/People%20and%20Places/GP%20Practices.ods [Licence: OGL]
+## (X & Y in Irish Grid Reference format)
+
 library(httr)
 
 url <- 'http://mapit.mysociety.org/postcode/'
