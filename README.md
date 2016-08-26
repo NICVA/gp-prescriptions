@@ -1,5 +1,5 @@
 # gp-prescriptions
-Working with OpenDataNI GP Prescribing Data
+Working with [OpenDataNI GP Prescribing Data](https://www.opendatani.gov.uk/dataset/gp-prescribing-data)
 
 ## Creating a prescriptions dataset by combining a number of months
 [`find-combine.R`](find-combine.R) allows you to enter a range of months (e.g. 1:12, 1:3, 5:9) to download, combine and create a new data file from. '1' is the most recent month the data is available from on [OpenDataNI](https://www.opendatani.gov.uk/dataset/gp-prescribing-data), so count back from that. This uses the OpenDataNI datastore API to find and download the data. ([Datapackage {json})](https://www.opendatani.gov.uk/api/3/action/package_show?id=a7b76920-bc0a-48fd-9abf-dc5ad0999886)
@@ -13,3 +13,5 @@ This is beneficial because it allows prescribing rates (e.g. number of prescript
 
 ## Mapping practices
 [`map-practices.R`](map-practices.R) takes your GP Practice Reference File (object `practices`) and adds ONS/NISRA names and codes for the constituency, ward, NI council and Census super output area for each practice, as well as latitudes and longitudes. 
+
+This uses the [MapItAPI](http://mapit.mysociety.org/) from MySociety
