@@ -63,7 +63,7 @@ colnames(combined) <- tolower(colnames(combined))
 ## Now, let's sort by the medicine type using the British National Formulary (BNF) coding system, then month:
 attach(combined)
 combined <- combined[order(bnf_chapter, bnf_section, bnf_paragraph, 
-                           bnf_sub.paragraph, bnf_code, year, month),]
+                           bnf_subparagraph, bnf_code, year, month),]
 detach(combined)
 
 combofilename <- paste("combined-prescribing-dataset-",Sys.Date(),".csv",sep="")
